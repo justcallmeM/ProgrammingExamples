@@ -1,0 +1,19 @@
+
+• Indexes: 
+    An index is used to speed up searching in the database.
+    Indexes are used to find rows with specific column values quickly.
+    
+    
+    The name index was chosen because of how an index works in a book.
+    For example:
+        if you want to learn about matrix'es you would not flip through the
+        whole math book page by page scanning for the term "matrix".
+        Instead you'd go to the index find the term "matrix" and you'd see
+        a list of pages.
+
+    This technique is used by databases.
+        When you create an index, the database will create a method to rapidly
+        find data based on one or more columns.
+
+    Indexes use database storage, thus creating a lot of indexes can harm the database.
+
