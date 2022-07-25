@@ -1,3 +1,51 @@
-Clean code:
+﻿Clean code:
 	1. Don't write comments to explain something if it can be done
 		with variable or method (their names).
+
+
+substituinimas 
+
+unsigned where its used.
+
+string'e surasti substring'a
+
+ordinary comparison 		ir 	cultural comparison
+ziuri i paprasta lentele 		referencina kulturos lentele
+
+timestamp ir date offset : timestamp days ir totaldays instancu metodai.
+
+unasigning delegate -> the function becomes null.
+
+yield ar yra restriction'as?
+
+kuo skiraisi queue, stack, array, list.
+
+GC -> unmanaged resources ir Dispose skirtumai;
+
+deadlock -> how to avoid deadlock (good practices);
+
+
+
+
+Pirmas žingsnis -> Rašyti testus.
+
+ateina bugas -> parašyti bugui testą -> fixini buga -> testas pazaliuoja.
+
+pastebėti metodus, kurie mockinasi daznai -> iskelti i papildoma helperi. (FACTORY PATTERN)
+
+
+Testas 
+
+Arrange/Act/Assert, o ne Arrange/Assert/Act/Assert/Assert.
+
+
+Didelis PR gali būti skaidytas į mažesnes dalis.
+
+Kiekvienas commit'as reikalauja gražaus ir aiškaus komentaro.
+Pirma sukuriam reikalingus objektus -> commit.
+Papildom objektus -> commit
+Parasom logika -> commit
+Parasom testus -> commit
+Fixinam testus -> commit
+
+Didelis PR susideda is situ mazu detaliu, kurias galim perziureti zymiai lengviau.
