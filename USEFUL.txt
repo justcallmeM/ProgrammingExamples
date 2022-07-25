@@ -1,0 +1,3 @@
+Clean code:
+	1. Don't write comments to explain something if it can be done
+		with variable or method (their names).
