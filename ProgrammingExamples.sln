@@ -31,6 +31,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Static", "Static", "{B7DE1EE0-065A-4EB7-BE96-AE40951F706F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Types", "Types", "{3CD06CFA-8AA8-4DF3-AFCF-ACDD50A68FE5}"
+	ProjectSection(SolutionItems) = preProject
+		Information.txt = Information.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Records", "Records", "{0BEBCB10-7824-4205-ABA6-DFE954808F4D}"
 EndProject
@@ -45,15 +48,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Principles", "Principles", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstract", "Abstract\Abstract.csproj", "{4BD9F80D-72D0-4B1C-91C5-0237FF665C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records", "Records\Records.csproj", "{8C40B07A-A40B-4D85-8692-E400AE5C9E7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Records", "Records\Records.csproj", "{8C40B07A-A40B-4D85-8692-E400AE5C9E7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Static", "Static\Static.csproj", "{C438AAE7-F4E6-41A6-ADA9-36334AB029EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Static", "Static\Static.csproj", "{C438AAE7-F4E6-41A6-ADA9-36334AB029EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueAndReference", "ValueAndReferenceTypes\ValueAndReference.csproj", "{EE4A4F8E-1D37-4985-8D3C-3F050381F28C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValueAndReference", "ValueAndReferenceTypes\ValueAndReference.csproj", "{EE4A4F8E-1D37-4985-8D3C-3F050381F28C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{0D88D8D0-BEBC-460E-8D1D-6CA8F0D9839B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{0D88D8D0-BEBC-460E-8D1D-6CA8F0D9839B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessModifiers", "AccessModifiers\AccessModifiers.csproj", "{2FA21A80-0385-4EB0-9EB6-174EB1983AC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessModifiers", "AccessModifiers\AccessModifiers.csproj", "{2FA21A80-0385-4EB0-9EB6-174EB1983AC4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectExamples", "ProjectExamples", "{617A2A2B-50B0-4132-83CE-6A13F4DAF384}"
 EndProject

@@ -1,5 +1,8 @@
 ﻿namespace Interfaces
 {
+    using Interfaces;
+    using Models;
+
     /*
     • Class can inherit more than one interface.
     • All members (methods and properties) MUST be implemented 
@@ -10,54 +13,13 @@
 
     internal class Program
     {
-        public interface Instrument
-        {
-            public string Colour { get; set; }
-            public string Weight { get; set; }
-        }
-
-        public interface WindType
-        {
-            public string Pipes { get; set; }
-
-            public void Blow();
-        }
-
-        public interface StringType
-        {
-            public int NumOfStrings { get; set; }
-
-            public void Strum();
-            public void Pick();
-        }
-
-        public class Guitar : Instrument, StringType
-        {
-            public string Colour { get; set; }
-            public string Weight { get; set; }
-            public int NumOfStrings { get; set; }
-
-            public Guitar(string colour, string weight, int numOfStrings)
-            {
-                Colour = colour;
-                Weight = weight;
-                NumOfStrings = numOfStrings;
-            }
-
-            public void Strum()
-            {
-                Console.WriteLine("*strumming the guitar strings*");
-            }
-
-            public void Pick()
-            {
-                Console.WriteLine("*picking the guitar strings*");
-            }
-        }
-
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            IStringType guitar = new Guitar("brown", "3kg", 6);
+
+            Console.WriteLine($"My guitar properties - Colour: {guitar.Colour}; Weight: {guitar.Weight}; Number of strings: {guitar.NumOfStrings};");
+
+            Console.ReadKey(true);
         }
     }
 }

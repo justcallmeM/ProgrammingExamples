@@ -1,6 +1,6 @@
 ﻿namespace Abstract.Models
 {
-    using Abstract.Abstractions;
+    using Abstractions;
 
     public class Trumpet : Instrument
     {

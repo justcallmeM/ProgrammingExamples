@@ -1,7 +1,7 @@
 ﻿namespace Abstract
 {
-    using Abstract.Abstractions;
-    using Abstract.Models;
+    using Abstractions;
+    using Models;
 
     /*
         • Class can inherit only ONE regular or abstract class
