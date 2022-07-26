@@ -1,23 +1,4 @@
 ﻿General
-Two types of types. Value and Reference types:
-Value types are stored in the stack.
-Value types (numeric types, enum, char, byte, bool)
-	When you pass a value-type variable from one method to another, the system creates a separate copy of a variable in another method. If value got changed in the one method, it wouldn't affect the variable in another method.
-Reference types are stored on the heap.
-Reference types (String, Arrays[net jei elementai yra value type], Class, Delegate)
-	When you pass a reference type variable from one method to another, it doesn't create a new copy; instead, it passes the variable's address. So, If we change the value of a variable in a method, it will also be reflected in the calling method.
-
-reference types are garba-collected, where value types are deallocated form the stack when the stack unwinds or when their containing type gets deallocated.
-
-boxing occurs when we cast value types to reference types and unboxed when cast back.
-
-reference types assignemnts copy the reference while value type assignments copy the entire value. 
-
-Nullable types
-Reference types are nullabel by default, but Value types can not be null unless they are nullable.
-The core of nullable value type support is the Nullable<T> struct. (Klasė žinoma yra Generic), su "struct" restriction'u, kuris pasako, jog ši klasė gali būti inicijuota tik su value tipu.
-Konstruktorius nustatys property "HasValue" į true, kai jam paduosim T value. 
-
 
 Numeric types
 -----
@@ -26,7 +7,8 @@ String / chars
 When initializing a string most of the time we are passing an array of characters.
 String is immutable (read-only - cannot be changed at a later time) 
 String also has an indexer thats why we can access individual characters inside the string
-Arrays are fixed size thats why when trying to change a string's value the CLR allocates new memory on the heap for the string with according array size changes. Garbage collector disposes of the original string stored in the previous location.
+Arrays are fixed size thats why when trying to change a string's value the CLR allocates new memory on the heap for the string with according array size changes. 
+	Garbage collector disposes of the original string stored in the previous location.
 
 char[] chars = {'H','e','l','l','o'};
 
