@@ -52,7 +52,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Records", "Records\Records.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Static", "Static\Static.csproj", "{C438AAE7-F4E6-41A6-ADA9-36334AB029EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValueAndReference", "ValueAndReferenceTypes\ValueAndReference.csproj", "{EE4A4F8E-1D37-4985-8D3C-3F050381F28C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Types", "ValueAndReferenceTypes\Types.csproj", "{EE4A4F8E-1D37-4985-8D3C-3F050381F28C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{0D88D8D0-BEBC-460E-8D1D-6CA8F0D9839B}"
 EndProject

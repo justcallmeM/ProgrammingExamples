@@ -1,4 +1,4 @@
-﻿namespace ValueAndReference.RefKeyword
+﻿namespace Types.AdditionalExamples
 {
     public class AdditionalExamples
     {
@@ -8,7 +8,17 @@
 
         }
 
-        public static void TestRefValueTypes()
+        public static void OutParamModifier()
+        {
+
+        }
+
+        public static void InParamModifier()
+        {
+
+        }
+
+        public static void RefParamModifier()
         {
             int value = 4;
             int valueRef = 5;

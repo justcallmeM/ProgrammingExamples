@@ -1,4 +1,4 @@
-﻿namespace ValueAndReference.ValueType
+﻿namespace Types.Value
 {
     //value type assignments copy the entire value.
     /* value types are allocated either on the stack or inline in containing types 
@@ -23,7 +23,7 @@
      */
 
     //Value types are stored in the stack.
-    public class ValueType
+    public class Value
     {
         public static void PassValueTypeExample()
         {

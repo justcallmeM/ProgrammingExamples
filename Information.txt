@@ -1,8 +1,5 @@
 ﻿General
 
-Numeric types
------
-
 String / chars
 When initializing a string most of the time we are passing an array of characters.
 String is immutable (read-only - cannot be changed at a later time) 
