@@ -27,6 +27,8 @@
 
             Types.Reference.Reference.PassReferenceTypeExample();
 
+            Types.Reference.Reference.PassingReferenceByValue();
+
             Console.WriteLine("End\n");
 
             Console.ReadKey(true);
