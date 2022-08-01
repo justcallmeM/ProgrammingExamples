@@ -1,6 +1,6 @@
 ﻿namespace Types.AdditionalExamples
 {
-    public class AdditionalExamples
+    public class Additional
     {
         //boxing occurs when we cast value types to reference types and unboxed when cast back.
         public static void Boxing()

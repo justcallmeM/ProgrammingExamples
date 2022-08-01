@@ -24,7 +24,7 @@ namespace Types.Reference
      *      pointer (only available in unsafe code)
      */
 
-    public class Reference
+    public class ReferenceType
     {
         public static void ReferenceExample()
         {
@@ -46,42 +46,7 @@ namespace Types.Reference
              * So, If we change the value of a variable in a method, it will also be reflected in the calling method.
             */
 
-            int[]? numArray = new int[2] { 11, 15 };
-            var a = new { FirstName = "Mindaugas" };
 
-            Console.WriteLine(a.FirstName);
-
-            ChangeValueObj(a);
-
-            Console.WriteLine(a.FirstName);
-
-            //PrintArrayValues(numArray);
-
-            //ChangeValue(numArray);
-
-            //PrintArrayValues(numArray);
-
-            static void ChangeValue(int[]? numArray)
-            {
-                numArray = new int[3] { 1, 2, 3 };
-            }
-
-            static void ChangeValueObj(dynamic a)
-            {
-                a.FirstName = "Vytautas";
-            }
-
-            static void PrintArrayValues(int[] numArray)
-            {
-                StringBuilder builder = new();
-
-                foreach (int num in numArray)
-                {
-                    builder.Append(num);
-                }
-
-                Console.WriteLine(builder.ToString());
-            }
         }
 
         public static void PassingReferenceByValue()
@@ -108,12 +73,27 @@ namespace Types.Reference
 
             Console.WriteLine(text);
 
-            static void ChangeValue(string x)
+            static void ChangeValue(string val)
             {
                 //new instance of a string is created alonside new object in memory.
-                x = "Text doesn't change";
+                val = "Text doesn't change";
 
-                Console.WriteLine(x);
+                Console.WriteLine(val);
+            }
+        }
+
+        public static void PassingReferenceByValue2()
+        {
+            Person person = new("Mindaugas", 26);
+
+            Console.WriteLine($"At first person is: {person.Name}, {person.Age}");
+            ChangeValue(person);
+            Console.WriteLine($"After change: {person.Name}, {person.Age}");
+
+            static void ChangeValue(Person person)
+            {
+                person.Name = "Dominyka";
+                person.Age = 30;
             }
         }
     }

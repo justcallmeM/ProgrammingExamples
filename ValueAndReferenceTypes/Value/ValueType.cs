@@ -23,7 +23,7 @@
      */
 
     //Value types are stored in the stack.
-    public class Value
+    public class ValueType
     {
         public static void PassValueTypeExample()
         {
