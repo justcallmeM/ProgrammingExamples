@@ -25,34 +25,6 @@
     //Value types are stored in the stack.
     public class ValueType
     {
-        public static void PassValueTypeExample()
-        {
-            /*
-             * When you pass a value-type variable from one method to another, the system creates a separate copy of a variable in another method. 
-             * If value got changed in the one method, it wouldn't affect the variable in another method.
-            */
 
-            int i = 100;
-
-            Console.WriteLine(i);
-
-            ChangeValue(i);
-
-            Console.WriteLine(i);
-
-            static void ChangeValue(int x)
-            {
-                x = 200;
-
-                Console.WriteLine(x);
-            }
-        }
-
-        //Value types can not be null unless they are nullable
-        //The core of nullable value type support is the Nullable<T> struct. Struct restriction indicates that it can only be initiated with a value type.
-
-        //int num = null;
-        //Nullable<int> numNullable = null;
-        //int? numNullable2 = null;
     }
 }

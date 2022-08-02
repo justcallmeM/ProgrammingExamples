@@ -3,37 +3,34 @@
     using AdditionalExamples;
     using Reference;
     using Value;
+    using static System.Console;
 
     public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Additional examples: ");
+            WriteLine("Additional examples: ");
 
-            Additional.RefParamModifier();
-            Additional.InParamModifier();
-            Additional.OutParamModifier();
-            Additional.Boxing();
+            KindsOfParameters.RefParamModifier();
+            KindsOfParameters.InParamModifier();
+            KindsOfParameters.OutParamModifier();
+            KindsOfParameters.Boxing();
 
-            Console.WriteLine("End\n");
+            WriteLine("End\n");
 
-            Console.WriteLine("Value type examples: ");
+            WriteLine("Value type examples: ");
 
-            ValueType.PassValueTypeExample();
 
-            Console.WriteLine("End\n");
 
-            Console.WriteLine("Reference type examples: ");
+            WriteLine("End\n");
 
-            ReferenceType.PassReferenceTypeExample();
+            WriteLine("Reference type examples: ");
 
-            ReferenceType.PassingReferenceByValue();
+            ParameterPassing.PassingReferenceTypeByValue3();
 
-            ReferenceType.PassingReferenceByValue2();
+            WriteLine("End\n");
 
-            Console.WriteLine("End\n");
-
-            Console.ReadKey(true);
+            ReadKey(true);
         }
     }
 }

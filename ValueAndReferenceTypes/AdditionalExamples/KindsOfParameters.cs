@@ -1,13 +1,15 @@
 ﻿namespace Types.AdditionalExamples
 {
-    public class Additional
+    public class KindsOfParameters
     {
+
         //boxing occurs when we cast value types to reference types and unboxed when cast back.
         public static void Boxing()
         {
 
         }
 
+        //output parameters
         public static void OutParamModifier()
         {
 
@@ -18,6 +20,13 @@
 
         }
 
+        //parameter arrays
+        public static void ParamsParamModifier()
+        {
+
+        }
+
+        //reference parameters
         public static void RefParamModifier()
         {
             int value = 4;
