@@ -23,3 +23,12 @@ String Interpolation -> string vardas = "Mindaugas";
 			string manoPilnasVardas = $"{vardas} {pavarde}";
 
 Immutable strings (StringBuilder class)
+
+
+https://jonskeet.uk/csharp/parameters.html
+https://jonskeet.uk/csharp/references.html
+https://jonskeet.uk/csharp/memory.html
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/in-parameter-modifier
+
+https://www.google.com/search?q=using+inside+namespace+and+outsidenamespace&rlz=1C1GCEB_enLT939LT939&oq=using+inside+namespace+and+outsidenamespace&aqs=chrome..69i57j33i10i160l2.9065j0j7&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=is+it+good+to+write+try+catch+in+tests+c%23%3F&rlz=1C1GCEB_enLT939LT939&ei=s53jYuO-MuCAxc8PmvS1uAI&ved=0ahUKEwij5OSo2p35AhVgQPEDHRp6DScQ4dUDCA4&uact=5&oq=is+it+good+to+write+try+catch+in+tests+c%23%3F&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgATIFCCEQoAE6BwgAEEcQsAM6BwgAELADEEM6BAgAEEM6DQguEMcBENEDENQCEEM6BQgAEIAEOgsILhCABBDHARDRAzoICAAQjwEQ6gI6BQgAEJECOgsILhCABBDHARCvAToFCC4QgAQ6DgguEIAEEMcBENEDENQCOggILhCABBDUAjoICAAQgAQQyQM6BggAEB4QFjoFCAAQhgM6CAghEB4QFhAdOgoIIRAeEA8QFhAdOgcIIRAKEKABSgQIQRgASgQIRhgAUKcGWO5VYNpXaAxwAXgAgAHoAYgByimSAQcyMi4yNi4xmAEAoAEBsAEFyAEKwAEB&sclient=gws-wiz
