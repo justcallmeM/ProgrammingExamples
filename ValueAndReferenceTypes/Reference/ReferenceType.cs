@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Types.Reference
+﻿namespace Types.Reference
 {
     //Reference types are stored on the heap.
 
