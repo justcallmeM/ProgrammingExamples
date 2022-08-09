@@ -2,13 +2,13 @@
 {
     using Interfaces;
 
-    public class Guitar : IStringType
+    public class Guitar : IStringTypeInstrument
     {
         public string Colour { get; set; }
-        public string Weight { get; set; }
+        public int Weight { get; set; }
         public int NumOfStrings { get; set; }
 
-        public Guitar(string colour, string weight, int numOfStrings)
+        public Guitar(string colour, int weight, int numOfStrings)
         {
             Colour = colour;
             Weight = weight;

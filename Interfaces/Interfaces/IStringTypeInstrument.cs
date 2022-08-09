@@ -1,6 +1,7 @@
 ﻿namespace Interfaces.Interfaces
 {
-    public interface IStringType : IInstrument
+    // convention is to start an interface name with a capital I.
+    public interface IStringTypeInstrument : IInstrument
     {
         public int NumOfStrings { get; set; }
 
