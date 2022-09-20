@@ -3,6 +3,6 @@
     public interface IInstrument
     {
         public string Colour { get; set; }
-        public string Weight { get; set; }
+        public int Weight { get; set; }
     }
 }
