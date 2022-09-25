@@ -11,5 +11,10 @@
         {
             Console.WriteLine("Clean");
         }
+
+        public static void DoSomething()
+        {
+            Console.WriteLine("doing something");
+        }
     }
 }

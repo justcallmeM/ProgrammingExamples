@@ -13,6 +13,7 @@ namespace AccessModifiers
       or from within a derived class in another assembly.
     • private protected: The type or member can be accessed by types derived from the class that 
       are declared within its containing assembly.
+    • sealed: prevents a class from being inherited
     */
 
     internal class Program
