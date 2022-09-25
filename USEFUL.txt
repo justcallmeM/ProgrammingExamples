@@ -2,6 +2,7 @@
 	1. Don't write comments to explain something if it can be done
 		with variable or method (their names).
 
+	2. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/discards
 
 substituinimas 
 
@@ -49,3 +50,4 @@ Parasom testus -> commit
 Fixinam testus -> commit
 
 Didelis PR susideda is situ mazu detaliu, kurias galim perziureti zymiai lengviau.
+
