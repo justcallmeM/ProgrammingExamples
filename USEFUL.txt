@@ -51,3 +51,18 @@ Fixinam testus -> commit
 
 Didelis PR susideda is situ mazu detaliu, kurias galim perziureti zymiai lengviau.
 
+
+is it good to write try catch in tests c#?
+
+Namespaces:
+https://stackoverflow.com/questions/125319/should-using-directives-be-inside-or-outside-the-namespace
+
+Developer roadmap. Check if you missed something.
+https://github.com/MoienTajik/AspNetCore-Developer-Roadmap
+
+Check serilog:
+https://serilog.net/
+
+Check new things in C# 8 and further...
+https://www.youtube.com/watch?v=V3LrQBhZNP4&ab_channel=dotnetsheff
+https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9
