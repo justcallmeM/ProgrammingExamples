@@ -19,6 +19,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccessModifiers", "AccessModifiers", "{23CC7B3A-9937-4497-93C8-DB587C443BBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Delegates", "Delegates", "{FB3D642C-3B15-4349-BDF5-7ED714035881}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{12717E6C-DAE1-47BF-906A-C6CD1678844B}"
 EndProject
@@ -44,6 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Principles", "Principles", 
 		KISS.txt = KISS.txt
 		SOLID.txt = SOLID.txt
 		USEFUL.txt = USEFUL.txt
+		YAGNI.txt = YAGNI.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstract", "Abstract\Abstract.csproj", "{4BD9F80D-72D0-4B1C-91C5-0237FF665C8B}"
