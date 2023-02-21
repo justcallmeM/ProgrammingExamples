@@ -38,7 +38,9 @@
         public static void InParamModifier()
         {
             string readonlyArgument = "Mindaugas";
-            
+
+            ChangeValue(readonlyArgument);
+
             static void ChangeValue(in string arg)
             {
                 //Uncomment the following line to see error CS8331
@@ -61,7 +63,7 @@
             {
                 foreach (int x in numbers)
                 {
-                    Console.Write (x + " ");
+                    Console.Write(x + " ");
                 }
                 Console.WriteLine();
             }

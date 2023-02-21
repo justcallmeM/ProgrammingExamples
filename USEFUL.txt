@@ -21,6 +21,9 @@ yield ar yra restriction'as?
 
 kuo skiraisi queue, stack, array, list.
 
+Queue - FIFO: first in first out
+Stack - LIFO: last in first out
+
 GC -> unmanaged resources ir Dispose skirtumai;
 
 deadlock -> how to avoid deadlock (good practices);
@@ -39,6 +42,8 @@ Testas
 
 Arrange/Act/Assert, o ne Arrange/Assert/Act/Assert/Assert.
 
+Testų piramidė:
+https://martinfowler.com/articles/practical-test-pyramid.html
 
 Didelis PR gali būti skaidytas į mažesnes dalis.
 
@@ -51,3 +56,14 @@ Fixinam testus -> commit
 
 Didelis PR susideda is situ mazu detaliu, kurias galim perziureti zymiai lengviau.
 
+
+traukiant duomenis su filtru, geriau filtrą nusiūsti į duomenų paėmimo layer'į ir traukti duomenis jau su filtru, o ne
+pasiimti visus duomenis ir filtruoti visus duomenis aukštesniame sluoksnyje.
+
+
+KNYGOS:
+Test Driven Development: By Example
+Clean Code: A Handbook of Agile Software Craftsmanship
+
+BLOGS:
+https://ericlippert.com/about-eric-lippert/

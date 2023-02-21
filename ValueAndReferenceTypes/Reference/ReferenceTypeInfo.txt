@@ -1,0 +1,24 @@
+﻿Reference types are stored on the heap.
+
+Variables of reference types store references to their data (objects)
+With reference types, two variables can reference the same object;
+therefore, operations on one variable can affect the object referenced by the other variable
+
+Reference type is garbage collected.
+
+Reference types are nullable by default.
+
+Reference types:
+    class type:
+        class, object, string
+    interface
+    delegate
+    record
+    dynamic
+    array type:
+        value type
+        class type
+        interface
+        delegate
+        dynamic
+        pointer (only available in unsafe code)
