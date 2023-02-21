@@ -17,3 +17,4 @@
 
     Indexes use database storage, thus creating a lot of indexes can harm the database.
 
+    https://www.sqlshack.com/top-10-questions-answers-sql-server-indexes/

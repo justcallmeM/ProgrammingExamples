@@ -19,6 +19,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccessModifiers", "AccessModifiers", "{23CC7B3A-9937-4497-93C8-DB587C443BBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Delegates", "Delegates", "{FB3D642C-3B15-4349-BDF5-7ED714035881}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{12717E6C-DAE1-47BF-906A-C6CD1678844B}"
 EndProject
@@ -44,6 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Principles", "Principles", 
 		KISS.txt = KISS.txt
 		SOLID.txt = SOLID.txt
 		USEFUL.txt = USEFUL.txt
+		YAGNI.txt = YAGNI.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstract", "Abstract\Abstract.csproj", "{4BD9F80D-72D0-4B1C-91C5-0237FF665C8B}"
@@ -116,6 +120,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration tests", "Integration tests", "{E9113588-748D-4C47-AD8E-8489BD0BD342}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit tests", "Unit tests", "{0CE55398-E9E7-474E-8247-B819C9531E68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpClientClass", "HttpClientClass", "{29D27000-E729-43C3-A590-BA63FF86BC94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -194,8 +200,6 @@ Global
 		{89671683-25E9-45EB-820C-EBFFFAAB008F} = {B4AC9CDE-CBD4-43FE-998E-0FD8A6D80864}
 		{670EBE9F-CB5E-46E7-A602-F65A40672BDC} = {B4AC9CDE-CBD4-43FE-998E-0FD8A6D80864}
 		{64BCDFEB-4F2B-41DA-93BB-508EF51915D7} = {DDC83DAF-1065-4E91-B00C-59DEB6E94437}
-		{E9113588-748D-4C47-AD8E-8489BD0BD342} = {D92098A0-1E95-45BA-B8A1-3D18CA29C526}
-		{0CE55398-E9E7-474E-8247-B819C9531E68} = {D92098A0-1E95-45BA-B8A1-3D18CA29C526}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C120AA94-3CD6-4021-A0FC-56814CD3488D}
