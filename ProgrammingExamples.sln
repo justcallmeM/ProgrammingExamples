@@ -19,9 +19,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccessModifiers", "AccessModifiers", "{23CC7B3A-9937-4497-93C8-DB587C443BBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Delegates", "Delegates", "{FB3D642C-3B15-4349-BDF5-7ED714035881}"
-	ProjectSection(SolutionItems) = preProject
-		TextFile1.txt = TextFile1.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{12717E6C-DAE1-47BF-906A-C6CD1678844B}"
 EndProject
@@ -123,7 +120,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit tests", "Unit tests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpClientClass", "HttpClientClass", "{29D27000-E729-43C3-A590-BA63FF86BC94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{C3880799-9AB4-4FE7-A70F-15C76851B10C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates", "Delegates\Delegates.csproj", "{C3880799-9AB4-4FE7-A70F-15C76851B10C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concurrency", "Concurrency\Concurrency.csproj", "{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPracticeWebApp", "MyPracticeWebApp\MyPracticeWebApp.csproj", "{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +160,14 @@ Global
 		{C3880799-9AB4-4FE7-A70F-15C76851B10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3880799-9AB4-4FE7-A70F-15C76851B10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3880799-9AB4-4FE7-A70F-15C76851B10C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -207,6 +216,8 @@ Global
 		{670EBE9F-CB5E-46E7-A602-F65A40672BDC} = {B4AC9CDE-CBD4-43FE-998E-0FD8A6D80864}
 		{64BCDFEB-4F2B-41DA-93BB-508EF51915D7} = {DDC83DAF-1065-4E91-B00C-59DEB6E94437}
 		{C3880799-9AB4-4FE7-A70F-15C76851B10C} = {FB3D642C-3B15-4349-BDF5-7ED714035881}
+		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB} = {E07111CD-3438-41F6-A408-ED0CC90054A0}
+		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1} = {FB3D642C-3B15-4349-BDF5-7ED714035881}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C120AA94-3CD6-4021-A0FC-56814CD3488D}
