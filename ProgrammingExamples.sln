@@ -124,7 +124,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates", "Delegates\Dele
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concurrency", "Concurrency\Concurrency.csproj", "{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPracticeWebApp", "MyPracticeWebApp\MyPracticeWebApp.csproj", "{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPracticeWebApp", "MyPracticeWebApp\MyPracticeWebApp.csproj", "{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

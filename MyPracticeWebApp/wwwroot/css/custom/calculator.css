@@ -1,0 +1,99 @@
+﻿#calc-grid {
+    display: inline-grid;
+}
+
+#calc-one {
+    grid-area: one;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#calc-two {
+    grid-area: two;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#calc-three {
+    grid-area: three;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#calc-four {
+    grid-area: four;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#calc-five {
+    grid-area: five;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#calc-six {
+    grid-area: six;
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#calc-seven {
+    grid-area: seven;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#calc-eight {
+    grid-area: eight;
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#calc-nine {
+    grid-area: nine;
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#calc-zero {
+    grid-area: zero;
+    grid-column: 2;
+    grid-row: 4;
+}
+
+#calc-addition {
+    grid-area: addition;
+    grid-column: 4;
+    grid-row: 3;
+}
+
+#calc-subtraction {
+    grid-area: subtraction;
+    grid-column: 4;
+    grid-row: 4;
+}
+
+#calc-multiplication {
+    grid-area: multiplication;
+    grid-column: 4;
+    grid-row: 1;
+}
+
+#calc-division {
+    grid-area: division;
+    grid-column: 4;
+    grid-row: 2;
+}
+
+#calc-dot {
+    grid-area: dot;
+    grid-column: 1;
+    grid-row: 4;
+}
+
+#calc-equality {
+    grid-area: equality;
+    grid-column: 3;
+    grid-row: 4;
+}

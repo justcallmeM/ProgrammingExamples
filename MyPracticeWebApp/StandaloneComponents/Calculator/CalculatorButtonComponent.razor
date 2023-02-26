@@ -1,0 +1,25 @@
+﻿<img src="@($"../imgCalculator/{Id}{FileFormat}")" id="@($"calc-{Id}")" @onclick=SwitchImage />
+
+@code {
+
+    [Parameter]
+    public string Id { get; set; }
+
+    private int SwitchDuration { get; set; } = 500;
+
+    private string FileFormat { get; set; } = ".png";
+
+
+    public async Task SwitchImage()
+    {
+        FileFormat = ".gif";
+        Id = "Animation" + Id;
+        StateHasChanged();
+        await Task.Delay(SwitchDuration);
+
+        FileFormat = ".png";
+        Id = Id.Substring("Animation".Length, Id.Length - "Animation".Length);
+        StateHasChanged();
+    }
+
+}

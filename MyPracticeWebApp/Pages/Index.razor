@@ -1,9 +1,22 @@
 ﻿@page "/"
 
+@using MyPracticeWebApp.Shared.Components
+@using MyPracticeWebApp.StandaloneComponents.Calculator
+@inject IJSRuntime JsRuntime;
+
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<CarouselComponent Components="types"/>
 
-Welcome to your new app.
+<CalculatorComponent />
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+    Type[] types =
+        {
+        typeof(Counter),
+        typeof(SurveyPrompt),
+        typeof(FetchData)
+    };
+}
