@@ -2,6 +2,10 @@
     display: inline-grid;
 }
 
+    #calc-grid > * {
+        width: 50px;
+    }
+
 #calc-one {
     grid-area: one;
     grid-column: 1;

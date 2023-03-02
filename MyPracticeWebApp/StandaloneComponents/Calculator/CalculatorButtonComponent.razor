@@ -1,6 +1,20 @@
-﻿<img src="@($"../imgCalculator/{Id}{FileFormat}")" id="@($"calc-{Id}")" @onclick=SwitchImage />
+﻿@*<img src="@($"../imgCalculator/{Id}{FileFormat}")" id="@($"calc-{Id}")"  @onclick="async () => { DisableImage(); await SwitchImage(); EnableImage(); }" disabled="@IsImageDisabled" />*@
+
+<img src="@($"../imgCalculator/{Id}{FileFormat}")" 
+     id="@($"calc-{Id}")" 
+     @onclick="async () => { DisableClickEvent(); await SwitchImage(); EnableClickEvent(); }" />
+
+@*<!-- disable the image -->
+<img src="image.gif" @onclick="async () => { DisableImage(); await SwitchImage(); EnableImage(); }" disabled="@IsImageDisabled" />
+
+<!-- or disable the click event -->
+<img src="image.gif" @onclick="async () => { DisableClickEvent(); await SwitchImage(); EnableClickEvent(); }" />*@
+
 
 @code {
+
+    [Parameter]
+    public EventCallback<int> ButtonClick { get; set; }
 
     [Parameter]
     public string Id { get; set; }
@@ -9,9 +23,33 @@
 
     private string FileFormat { get; set; } = ".png";
 
+    private bool IsImageDisabled { get; set; }
+    private bool IsClickEventDisabled { get; set; }
 
-    public async Task SwitchImage()
+    //public async Task SwitchImage()
+    //{
+    //            IsImageDisabled = true; // disable the image
+    //    IsClickEventDisabled = true; // disable the click event
+
+    //    FileFormat = ".gif";
+    //    Id = "Animation" + Id;
+    //    StateHasChanged();
+    //    await Task.Delay(SwitchDuration);
+
+    //    FileFormat = ".png";
+    //    Id = Id.Substring("Animation".Length, Id.Length - "Animation".Length);
+    //    StateHasChanged();
+
+    //    await ButtonClick.InvokeAsync(ResolveButtonValue(Id));
+    //    StateHasChanged();
+    //}
+
+    private async Task SwitchImage()
     {
+        IsImageDisabled = true; // disable the image
+        IsClickEventDisabled = true; // disable the click event
+
+        // update the image properties and re-render the component
         FileFormat = ".gif";
         Id = "Animation" + Id;
         StateHasChanged();
@@ -20,6 +58,49 @@
         FileFormat = ".png";
         Id = Id.Substring("Animation".Length, Id.Length - "Animation".Length);
         StateHasChanged();
+
+        await ButtonClick.InvokeAsync(ResolveButtonValue(Id));
+        StateHasChanged();
+
+        IsImageDisabled = false; // enable the image
+        IsClickEventDisabled = false; // enable the click event
     }
 
+    public int ResolveButtonValue(string Id)
+    {
+        return Id switch
+        {
+            "zero" => 0,
+            "one" => 1,
+            "two" => 2,
+            "three" => 3,
+            "four" => 4,
+            "five" => 5,
+            "six" => 6,
+            "seven" => 7,
+            "eight" => 8,
+            "nine" => 9,
+            _ => throw new Exception()
+        };
+    }
+
+    private void DisableImage()
+    {
+        IsImageDisabled = true;
+    }
+
+    private void EnableImage()
+    {
+        IsImageDisabled = false;
+    }
+
+    private void DisableClickEvent()
+    {
+        IsClickEventDisabled = true;
+    }
+
+    private void EnableClickEvent()
+    {
+        IsClickEventDisabled = false;
+    }
 }

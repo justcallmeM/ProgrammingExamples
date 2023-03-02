@@ -1,22 +1,30 @@
 ﻿<div id="calc-grid">
-    <CalculatorButtonComponent Id="one" />
-    <CalculatorButtonComponent Id="two"/>
-    <CalculatorButtonComponent Id="three" />
+    <CalculatorButtonComponent Id="one" ButtonClick="HandleOnClick" />
+    <CalculatorButtonComponent Id="two" ButtonClick="HandleOnClick" />
+    <CalculatorButtonComponent Id="three" ButtonClick="HandleOnClick" />
     <CalculatorButtonComponent Id="multiplication" />
-    <CalculatorButtonComponent Id="four" />
-    <CalculatorButtonComponent Id="five" />
-    <CalculatorButtonComponent Id="six" />
+    <CalculatorButtonComponent Id="four" ButtonClick="HandleOnClick" />
+    <CalculatorButtonComponent Id="five" ButtonClick="HandleOnClick" />
+    <CalculatorButtonComponent Id="six" ButtonClick="HandleOnClick" />
     <CalculatorButtonComponent Id="division" />
-    <CalculatorButtonComponent Id="seven" />
-    <CalculatorButtonComponent Id="eight"/>
-    <CalculatorButtonComponent Id="nine" />
+    <CalculatorButtonComponent Id="seven" ButtonClick="HandleOnClick" />
+    <CalculatorButtonComponent Id="eight" ButtonClick="HandleOnClick" />
+    <CalculatorButtonComponent Id="nine" ButtonClick="HandleOnClick" />
     <CalculatorButtonComponent Id="subtraction" />
     <CalculatorButtonComponent Id="dot" />
-    <CalculatorButtonComponent Id="zero" />
+    <CalculatorButtonComponent Id="zero" ButtonClick="HandleOnClick"/>
     <CalculatorButtonComponent Id="equality" />
     <CalculatorButtonComponent Id="addition" />
+    <p>@numbers</p>
 </div>
 
 @code {
+
+    public string numbers { get; set; }
+
+    private async Task HandleOnClick(int value)
+    {
+        numbers += value;
+    }
 
 }
