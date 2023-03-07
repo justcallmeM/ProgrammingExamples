@@ -1,30 +1,75 @@
 ﻿<div id="calc-grid">
-    <CalculatorButtonComponent Id="one" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="two" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="three" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="multiplication" />
-    <CalculatorButtonComponent Id="four" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="five" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="six" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="division" />
-    <CalculatorButtonComponent Id="seven" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="eight" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="nine" ButtonClick="HandleOnClick" />
-    <CalculatorButtonComponent Id="subtraction" />
-    <CalculatorButtonComponent Id="dot" />
-    <CalculatorButtonComponent Id="zero" ButtonClick="HandleOnClick"/>
-    <CalculatorButtonComponent Id="equality" />
-    <CalculatorButtonComponent Id="addition" />
-    <p>@numbers</p>
+    @if (IsDisabledOne)
+    {
+        <img src="@($"../calculatorSprites/{one}")"
+         id="@($"calc-one")" />
+    }
+    else
+    {
+        <img src="@($"../calculatorSprites/{one}")"
+         id="@($"calc-one")"
+         @onclick="async () => { await SwitchImageOne(); }" />
+    }
+
+    @if (IsDisabledTwo)
+    {
+        <img src="@($"../calculatorSprites/{two}")"
+         id="@($"calc-two")" />
+    }
+    else
+    {
+        <img src="@($"../calculatorSprites/{two}")"
+         id="@($"calc-two")"
+         @onclick="async () => { await SwitchImageTwo(); }" />
+    }
 </div>
 
 @code {
+    private int SwitchDuration { get; set; } = 500;
 
-    public string numbers { get; set; }
+    private bool IsDisabledOne = false;
+    private bool IsDisabledTwo = false;
 
-    private async Task HandleOnClick(int value)
+    private string one = "one.png";
+    private string two = "two.png";
+
+    private async Task SwitchImageOne()
     {
-        numbers += value;
+        IsDisabledOne = true;
+
+        one = "AnimationOne.gif";
+
+        await Task.Delay(SwitchDuration);
+
+        one = "one.png";
+
+        IsDisabledOne = false;
     }
+
+    private async Task SwitchImageTwo()
+    {
+        IsDisabledTwo = true;
+
+        two = "AnimationTwo.gif";
+
+        await Task.Delay(SwitchDuration);
+
+        two = "two.png";
+
+        IsDisabledTwo = false;
+    }
+
+    private async Task<double> AdditionAsync(double x, double y)
+        => await Task.Run(() => x + y);
+
+    private async Task<double> SubtractionAsync(double x, double y)
+        => await Task.Run(() => x - y);
+
+    private async Task<double> MultiplicationAsync(double x, double y)
+        => await Task.Run(() => x * y);
+
+    private async Task<double> DivisionAsync(double x, double y)
+        => await Task.Run(() => x / y);
+
 
 }
