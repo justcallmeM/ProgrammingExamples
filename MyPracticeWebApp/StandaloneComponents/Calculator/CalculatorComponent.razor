@@ -1,63 +1,28 @@
-﻿<div id="calc-grid">
-    @if (IsDisabledOne)
-    {
-        <img src="@($"../calculatorSprites/{one}")"
-         id="@($"calc-one")" />
-    }
-    else
-    {
-        <img src="@($"../calculatorSprites/{one}")"
-         id="@($"calc-one")"
-         @onclick="async () => { await SwitchImageOne(); }" />
-    }
+﻿@inject IJSRuntime JSRuntime;
 
-    @if (IsDisabledTwo)
-    {
-        <img src="@($"../calculatorSprites/{two}")"
-         id="@($"calc-two")" />
-    }
-    else
-    {
-        <img src="@($"../calculatorSprites/{two}")"
-         id="@($"calc-two")"
-         @onclick="async () => { await SwitchImageTwo(); }" />
-    }
+<div id="calc-grid">
+
+    <CalculatorButtonComponent ButtonName="zero" />
+    <CalculatorButtonComponent ButtonName="one"/>
+    <CalculatorButtonComponent ButtonName="two" />
+    <CalculatorButtonComponent ButtonName="three" />
+    <CalculatorButtonComponent ButtonName="four" />
+    <CalculatorButtonComponent ButtonName="five" />
+    <CalculatorButtonComponent ButtonName="six" />
+    <CalculatorButtonComponent ButtonName="seven" />
+    <CalculatorButtonComponent ButtonName="eight" />
+    <CalculatorButtonComponent ButtonName="nine" />
+    <CalculatorButtonComponent ButtonName="addition" />
+    <CalculatorButtonComponent ButtonName="subtraction" />
+    <CalculatorButtonComponent ButtonName="multiplication" />
+    <CalculatorButtonComponent ButtonName="division" />
+    <CalculatorButtonComponent ButtonName="equality" />
+    <CalculatorButtonComponent ButtonName="dot" />
+    <CalculatorButtonComponent ButtonName="clear" />
+
 </div>
 
 @code {
-    private int SwitchDuration { get; set; } = 500;
-
-    private bool IsDisabledOne = false;
-    private bool IsDisabledTwo = false;
-
-    private string one = "one.png";
-    private string two = "two.png";
-
-    private async Task SwitchImageOne()
-    {
-        IsDisabledOne = true;
-
-        one = "AnimationOne.gif";
-
-        await Task.Delay(SwitchDuration);
-
-        one = "one.png";
-
-        IsDisabledOne = false;
-    }
-
-    private async Task SwitchImageTwo()
-    {
-        IsDisabledTwo = true;
-
-        two = "AnimationTwo.gif";
-
-        await Task.Delay(SwitchDuration);
-
-        two = "two.png";
-
-        IsDisabledTwo = false;
-    }
 
     private async Task<double> AdditionAsync(double x, double y)
         => await Task.Run(() => x + y);
@@ -70,6 +35,4 @@
 
     private async Task<double> DivisionAsync(double x, double y)
         => await Task.Run(() => x / y);
-
-
 }

@@ -1,62 +1,27 @@
-﻿
-@if (IsDisabled)
-{
-    <img src="@($"../imgCalculator/{Id}{FileFormat}")"
-        id="@($"calc-{Id}")" />
-}
-else
-{
-    <img src="@($"../imgCalculator/{Id}{FileFormat}")" 
-        id="@($"calc-{Id}")" 
-        @onclick="async () => { await SwitchImage(); }" />
-}
+﻿@inject IJSRuntime JSRuntime;
+
+<img src=@($"../calculatorSprites/{ButtonName}.png")
+     @onclick='async () => await OnClickImageAnimation()'
+     id=@($"calc-{ButtonName}")
+     @ref="imageRef" />
 
 @code {
 
-    [Parameter]
-    public EventCallback<int> ButtonClick { get; set; }
+    private ElementReference imageRef;
 
     [Parameter]
-    public string Id { get; set; }
+    public string? ButtonName { get; set; }
 
-    private int SwitchDuration { get; set; } = 500;
-
-    private string FileFormat { get; set; } = ".png";
-
-    private bool IsDisabled = false;
-
-    private async Task SwitchImage()
+    private async Task OnClickImageAnimation()
     {
-        IsDisabled = true;
+        int animationTimeInMiliSeconds = 500;
 
-        FileFormat = ".gif";
-        Id = "Animation" + Id;
+        await JSRuntime.InvokeVoidAsync("setAttribute", imageRef, "src", $"../calculatorSprites/Animation{ButtonName}.gif");
 
-        await Task.Delay(SwitchDuration);
+        await Task.Delay(animationTimeInMiliSeconds);
 
-        FileFormat = ".png";
-        Id = Id.Substring("Animation".Length, Id.Length - "Animation".Length);
-
-        await ButtonClick.InvokeAsync(ResolveButtonValue(Id));
-
-        IsDisabled = false;
+        await JSRuntime.InvokeVoidAsync("setAttribute", imageRef, "src", $"../calculatorSprites/{ButtonName}.png");
     }
 
-    public int ResolveButtonValue(string Id)
-    {
-        return Id switch
-        {
-            "zero" => 0,
-            "one" => 1,
-            "two" => 2,
-            "three" => 3,
-            "four" => 4,
-            "five" => 5,
-            "six" => 6,
-            "seven" => 7,
-            "eight" => 8,
-            "nine" => 9,
-            _ => 1//throw new Exception()
-        };
-    }
 }
+
