@@ -124,8 +124,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates", "Delegates\Dele
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concurrency", "Concurrency\Concurrency.csproj", "{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPracticeWebApp", "MyPracticeWebApp\MyPracticeWebApp.csproj", "{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -164,10 +162,6 @@ Global
 		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -217,7 +211,6 @@ Global
 		{64BCDFEB-4F2B-41DA-93BB-508EF51915D7} = {DDC83DAF-1065-4E91-B00C-59DEB6E94437}
 		{C3880799-9AB4-4FE7-A70F-15C76851B10C} = {FB3D642C-3B15-4349-BDF5-7ED714035881}
 		{4F1DA5B5-B4AF-4FB5-89E1-50BA25BA6ECB} = {E07111CD-3438-41F6-A408-ED0CC90054A0}
-		{D53BD78B-CFFA-44F4-A175-11A8ED6ED2D1} = {FB3D642C-3B15-4349-BDF5-7ED714035881}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C120AA94-3CD6-4021-A0FC-56814CD3488D}
