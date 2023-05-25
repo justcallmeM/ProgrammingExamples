@@ -4,30 +4,51 @@
     {
         static void Main(string[] args)
         {
-            EasyDifficultyDelegateExample.Program.Execute();
 
             Console.ReadKey(true);
         }
     }
 }
 
-/* My own thoughts:
- 
-    Using delegates requires you think about the names of the properties even more than usually.
- 
- */
+
+namespace CalcExample
+{
+    public enum OperationsEnum
+    {
+        Addition,
+        Multiplication,
+        Subtraction
+    }
+
+    public class CalculatorWithDelegates
+    {
+        delegate double Operation(double x, double y);
+
+        public static double Execute(OperationsEnum chosenOperation, double x, double y) => chosenOperation switch
+        {
+            OperationsEnum.Addition => Calculate(x, y, (x, y) => x + y),
+            OperationsEnum.Multiplication => Calculate(x, y, (x, y) => x * y),
+            OperationsEnum.Subtraction => Calculate(x, y, (x, y) => x - y),
+            _ => throw new NotImplementedException()
+        };
+
+        private static double Calculate(double x, double y, Operation operation) => operation(x, y);
+    }
+
+    public class CalculatorWithoutDelegates
+    {
+        public static double Execute(OperationsEnum chosenOperation, double x, double y) => chosenOperation switch
+        {
+            OperationsEnum.Addition => x + y,
+            OperationsEnum.Multiplication => x * y,
+            OperationsEnum.Subtraction => x - y,
+            _ => throw new NotImplementedException()
+        };
+    }
+}
 
 
-/*
-
-    Let's say you have a list of integers and you want to perform some operations on each 
-    element of the list. One operation is to square the number, and another operation 
-    is to double the number. Instead of writing separate methods for each operation 
-    and manually deciding which method to call based on a condition, you can use a 
-    delegate to dynamically choose the operation to perform.
- 
-*/
-namespace EasyDifficultyDelegateExample
+namespace MathOperations
 {
     using System;
     using System.Collections.Generic;
@@ -45,16 +66,13 @@ namespace EasyDifficultyDelegateExample
         {
             List<int> numbers = new() { 1, 2, 3, 4, 5 };
 
-            // Delegate instance
             MathOperation operation;
 
-            // Perform square operation
             operation = Square;
             ProcessNumbers(numbers, operation);
 
             Console.WriteLine();
 
-            // Perform double operation
             operation = Double;
             ProcessNumbers(numbers, operation);
         }
@@ -70,41 +88,9 @@ namespace EasyDifficultyDelegateExample
         }
     }
 }
-/*
- 
-    In this example, we have a delegate named MathOperation that represents a method that 
-    takes an integer parameter and returns an integer. We also have two methods, Square and 
-    Double, which perform different operations on an integer.
-    
-    In the Main method, we create a list of integers and then dynamically choose the operation 
-    to perform using the delegate operation. First, we assign the Square method to the 
-    delegate and call the ProcessNumbers method, which processes each number in the 
-    list by squaring it. Then, we assign the Double method to the delegate and call 
-    the ProcessNumbers method again, this time processing each number by doubling it.
-    
-    Using a delegate allows us to write a generic ProcessNumbers method that can work 
-    with different operations without having to modify the method itself. We can easily 
-    switch between operations by assigning different methods to the delegate, 
-    making our code more flexible and reusable.
 
-    As you can see, by using a delegate, we can dynamically choose the operation 
-    to perform without duplicating code or adding complex conditional statements.
-    Delegates provide a clean and efficient way to decouple the logic of an 
-    operation from the code that uses it, improving code organization and maintainability.
 
-*/
-
-/*
-
-    Let's say you have a program that manages a collection of products. 
-    Each product has an ID, name, and price. You need to perform various 
-    operations on the collection, such as finding products with a specific 
-    condition, calculating the total price of the products, and applying a 
-    discount to each product. By using delegates, you can decouple the operations 
-    from the collection and easily switch between different behaviors.
-
-*/
-namespace ModerateDifficultyDelegateExample
+namespace ProductAnalysis
 {
     using System;
     using System.Collections.Generic;
@@ -137,26 +123,22 @@ namespace ModerateDifficultyDelegateExample
 
             Console.WriteLine();
 
-            // Find products with price greater than $10
             List<Product> expensiveProducts = FilterProducts(products, p => p.Price > 10);
             Console.WriteLine("Expensive Products (Price > $10):");
             PrintProducts(expensiveProducts);
 
             Console.WriteLine();
 
-            // Calculate the total price of all products
             decimal totalPrice = CalculateTotalPrice(products, p => p.Price);
             Console.WriteLine($"Total Price of Products: ${totalPrice}");
 
             Console.WriteLine();
 
-            // Apply a 20% discount to each product
             ModifyProducts(products, p => p.Price *= 0.8m);
             Console.WriteLine("Products after 20% Discount:");
             PrintProducts(products);
         }
 
-        // Method to filter products based on a condition
         static List<Product> FilterProducts(List<Product> products, ProductCondition condition) //Predicate<Product>
         {
             List<Product> filteredProducts = new();
@@ -170,7 +152,6 @@ namespace ModerateDifficultyDelegateExample
             return filteredProducts;
         }
 
-        // Method to calculate the total price of products using a calculator
         static decimal CalculateTotalPrice(List<Product> products, PriceCalculator calculator) //Func<Product, decimal>
         {
             decimal totalPrice = 0;
@@ -181,7 +162,6 @@ namespace ModerateDifficultyDelegateExample
             return totalPrice;
         }
 
-        // Method to modify products using a product modifier
         static void ModifyProducts(List<Product> products, ProductModifier modifier) //Action<Product>
         {
             foreach (Product product in products)
@@ -190,7 +170,6 @@ namespace ModerateDifficultyDelegateExample
             }
         }
 
-        // Method to print the details of products
         static void PrintProducts(List<Product> products)
         {
             foreach (Product product in products)
@@ -200,28 +179,9 @@ namespace ModerateDifficultyDelegateExample
         }
     }
 }
-/*
 
-    In this example, we define three delegate types: 
-    ProductCondition for filtering products based on a condition, 
-    PriceCalculator for calculating the price of a product, and ProductModifier 
-    for modifying product properties.
-    
-    We have a list of Product objects, and we perform various operations on it using delegates. 
-    First, we filter the products to find the expensive ones
 
-*/
-
-/*
-
-    Let's say you're building a game that involves different types of enemies. 
-    Each enemy has a health value and can be attacked. However, different enemies 
-    have different attack behaviors. By using delegates, you can define and assign 
-    attack behaviors dynamically, making it easier to handle different enemy types 
-    with varying attack logic.
-
-*/
-namespace HardDifficultyDelegateExample
+namespace Game
 {
     using System;
 
@@ -229,10 +189,8 @@ namespace HardDifficultyDelegateExample
     {
         public int Health { get; set; }
 
-        // Delegate declaration for attack behavior
         public delegate void AttackBehavior();
 
-        // Delegate instance for attack behavior
         protected AttackBehavior attackBehavior;
 
         public Enemy(int health)
@@ -240,7 +198,6 @@ namespace HardDifficultyDelegateExample
             Health = health;
         }
 
-        // Method to perform the attack
         public void Attack()
         {
             Console.WriteLine($"Enemy with health {Health} is attacking...");
@@ -248,12 +205,10 @@ namespace HardDifficultyDelegateExample
         }
     }
 
-    // Enemy types with different attack behaviors
     public class MeleeEnemy : Enemy
     {
         public MeleeEnemy(int health) : base(health)
         {
-            // Assign the attack behavior using a lambda expression
             attackBehavior = () => Console.WriteLine("Performing melee attack!");
         }
     }
@@ -262,7 +217,6 @@ namespace HardDifficultyDelegateExample
     {
         public RangedEnemy(int health) : base(health)
         {
-            // Assign the attack behavior using a lambda expression
             attackBehavior = () => Console.WriteLine("Performing ranged attack!");
         }
     }
@@ -271,7 +225,6 @@ namespace HardDifficultyDelegateExample
     {
         public MagicEnemy(int health) : base(health)
         {
-            // Assign the attack behavior using a lambda expression
             attackBehavior = () => Console.WriteLine("Performing magic attack!");
         }
     }
@@ -290,57 +243,58 @@ namespace HardDifficultyDelegateExample
         }
     }
 }
-/*
- 
-    In this example, we have a base Enemy class that defines the common 
-    properties and behavior of all enemies. It also declares an AttackBehavior delegate.
-    
-    Each enemy type (MeleeEnemy, RangedEnemy, and MagicEnemy) inherits from the base 
-    Enemy class and sets its attack behavior by assigning a lambda expression 
-    to the attackBehavior delegate instance.
-    
-    In the Main method, we create instances of different enemy types and invoke their 
-    Attack method. As each enemy attacks, the assigned attack behavior is dynamically 
-    invoked using the delegate. This allows each enemy type to have 
-    its own unique attack logic.
-    
-    By using delegates, we decouple the attack behavior from the base Enemy 
-    class and make it easy to customize the behavior for each enemy type. 
-    This approach provides flexibility and extensibility, allowing you to add 
-    new enemy types with different attack behaviors without modifying the 
-    base class or existing code.
- 
-*/
 
 
+namespace DelegateChainsExample
+{
+    public class Program
+    {
+        delegate int DelegateChain(ref int x);
+
+        public static void ExecuteMulticastIntDelegate()
+        {
+            DelegateChain delegateChain;
+
+            delegateChain = AddFive;
+
+            delegateChain += MultiplyByTwo;
+
+            int result = 3;
+
+            result = delegateChain(ref result);
+
+            Console.WriteLine(result);
+        }
+
+        static int AddFive(ref int x) => x += 5;
+
+        static int MultiplyByTwo(ref int x) => x *= 2;
 
 
-/*
-    Action Delegate: The Action delegate is a predefined delegate type in C# that represents 
-    a method that doesn't return a value (void) but can take up to 16 input parameters. 
-    It is typically used for performing an action or operation without returning a result. 
-    For example, you can use an Action delegate to encapsulate a method that performs a 
-    specific task or modifies some state.
+        delegate void MulticastDelegate(string x);
 
-    Func Delegate: The Func delegate is another predefined delegate type in C# that represents 
-    a method that takes one or more input parameters and returns a value. Func delegates can 
-    have up to 16 input parameters, with the last parameter representing the return type. 
-    The Func delegate is commonly used when you need to encapsulate a method that performs 
-    a computation and returns a result.
+        public static void ExecuteMulticastStringDelegate()
+        {
+            MulticastDelegate multicastDelegate;
 
-    // Example using Action delegate
-        Action<string> printMessage = message => Console.WriteLine(message);
-        printMessage("Hello, world!"); // Output: Hello, world!
-    
-    // Example using Func delegate
-        Func<int, int, int> addNumbers = (x, y) => x + y;
-        int sum = addNumbers(3, 5); // sum = 8
+            multicastDelegate = SayHello;
 
- 
- */
+            multicastDelegate += AddWorld;
+
+            multicastDelegate("Hello");
+        }
+
+        static void SayHello(string x)
+        {
+            Console.WriteLine(x);
+        }
+
+        static void AddWorld(string x) => Console.WriteLine(x + " World");
+    }
+}
 
 
-
+#region Delegate Theory
 /*
     C# delegates are a powerful feature that allows you to treat functions as first-class objects, 
     enabling you to pass them as arguments to other methods, store them in variables, and invoke them dynamically. 
@@ -445,6 +399,8 @@ namespace HardDifficultyDelegateExample
 */
 
 
+
+
 /*
  
     Use a Custom Delegate Type:
@@ -493,3 +449,5 @@ namespace HardDifficultyDelegateExample
     your codebase when choosing between custom delegate types and the predefined delegate types.
 
  */
+
+#endregion
