@@ -1,0 +1,12 @@
+Simple Web Tokens (SWT)
+	Description: SWT is a token format used to transfer information between parties and 
+		is simpler compared to other token formats. SWTs are URL-encoded key-value pairs.
+	Structure: Key-value pairs separated by ampersands (&) and then signed.
+
+Simple Web Tokens (SWT)
+	Pros:
+		Simple: Easy to generate and validate.
+		Compact: Smaller size compared to JWT.
+	Cons:
+		Deprecated: Not widely used anymore and considered less secure.
+		Limited: Less powerful and flexible compared to JWT and OAuth2 tokens.

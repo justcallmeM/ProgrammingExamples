@@ -1,0 +1,19 @@
+OAuth2 Access Tokens
+    Description: OAuth 2.0 is a standard for token-based authorization on the internet. OAuth2 
+        access tokens are granted after user authentication and authorization.
+    Types:
+        Bearer Tokens: A type of OAuth2 token that is simply passed as part of the HTTP request header, very similar to JWT.
+        MAC Tokens (Message Authentication Code): A more complex type of OAuth2 token that includes a 
+            cryptographic MAC to ensure the token's integrity.However, MAC tokens are not widely used compared to bearer tokens.
+
+
+OAuth2 Access Tokens
+    Pros:
+        Industry standard for authorization.
+        Can use different grant types (Authorization Code, Implicit, Password, Client Credentials).
+        Integrates well with third-party authentication providers.
+    Cons:
+        Complexity: Requires understanding and managing OAuth2 flows.
+        Storage: Tokens usually have to be stored in the server for stateful validation.
+
+https://oauth.net/2/

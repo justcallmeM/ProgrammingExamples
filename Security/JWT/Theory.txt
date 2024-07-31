@@ -1,0 +1,57 @@
+        
+JSON Web Token (JWT) defines a compact and self-contained way for securely transmitting information between parties as a JSON object. 
+This information can be verified and trusted because it is digitally signed or encrypted.
+
+JWT can be signed:
+     JWS - JSON Web Signature: Represents content secured with digital signatures or Message Authentication Codes (MACs) using JSON-based data structures.
+         JWT can be signed with:
+             A secret with the HMAC algorithm (Hash-based Message Authentication Code).
+             A public/private key pair:
+                 RSA (Rivest-Shamir-Adleman) - An algorithm used by modern computers to encrypt and decrypt messages. 
+                      RSA involves two keys: a public key for encryption and a private key for decryption.
+                 ECDSA (Elliptic Curve Digital Signature Algorithm) - A cryptographic algorithm used by cryptocurrencies like Bitcoin. 
+                      ECDSA is known for providing the same level of security as RSA but with shorter keys.
+
+JWT can be encrypted:
+     JWE - JSON Web Encryption: Represents encrypted content using JSON-based data structures.
+         JWE can provide confidentiality by encrypting the JWT data.
+         JWE encryption involves the following steps:
+             1. Generate a Content Encryption Key (CEK) to encrypt the payload.
+             2. Encrypt the CEK with a key encryption algorithm (e.g., RSA or direct symmetric key).
+             3. Encrypt the payload using the CEK and a specified content encryption algorithm (e.g., AES).
+     The encrypted JWT consists of:
+         Header: Specifies the encryption algorithm and key details.
+         Encrypted Key: The CEK encrypted using the receiver’s public key or shared symmetric key.
+         Initialization Vector (IV): A random value used for encryption.
+         Ciphertext: The encrypted payload.
+         Authentication Tag: Used to verify the integrity of the encrypted content.
+
+Together, JWS and JWE can be used to both securely transmit information (confidentiality) and verify the sender's authenticity (integrity).
+
+Note that, whetever you do with tokens, one of the current security best practices is to validate all cryptographic operations. (https://www.rfc-editor.org/rfc/rfc8725#section-3.3)
+It makes sense to encrypt a JWS if you want to keep sensitive information hidden from the bearer (client) or third parties.
+The real questions are: does the audience support JWE? If yes, which algorithms are supported?
+
+
+JSON Web Tokens (JWT)
+    Description: JWTs are a compact, URL-safe means of representing claims to be transferred between two parties. The token is signed to ensure the integrity and authenticity of the data.
+    Structure: A JWT is composed of three parts separated by dots: Header, Payload, and Signature.
+        Header: Contains metadata about the token including the type of token and the signing algorithm.
+        Payload: Contains the claims. Claims can be information about the user and metadata. There are three types of claims: registered, public, and private claims.
+        Signature: Used to verify the token was not altered. It’s created by signing the header and payload with a secret key or a private key.
+
+
+JWT Tokens
+    Pros:
+        Stateless: Once issued, there is no need for the server to store token information.
+        Self-contained: All necessary information is contained within the token.
+        Performance: Faster validation since it does not require a database lookup.
+    Cons:
+        Size: Can be large if there are many claims.
+        Exposure: Since the data is base64 encoded, sensitive data should not be put into JWT without encryption.
+
+
+https://jwt.io/introduction/
+https://www.ssl.com/article/comparing-ecdsa-vs-rsa/
+https://www.geeksforgeeks.org/blockchain-elliptic-curve-digital-signature-algorithm-ecdsa/
+https://www.geeksforgeeks.org/rsa-algorithm-cryptography/

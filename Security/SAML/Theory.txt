@@ -1,0 +1,16 @@
+SAML Tokens (Security Assertion Markup Language)
+    Description: SAML tokens are typically used in Single Sign-On (SSO) scenarios to 
+        communicate user authentication and authorization data across domains and services.
+    Structure: SAML tokens are XML-based and contain assertions made about the user 
+        such as identity and attributes.
+
+
+SAML Tokens
+    Pros:
+        Standardized: Widely used for Single Sign-On (SSO).
+        Mature: Field-tested and widely adopted in enterprise environments.
+    Cons:
+        Complexity: More complex to handle compared to JWT.
+        Size: Usually larger than JWT and can affect performance.
+
+https://auth0.com/blog/how-saml-authentication-works/

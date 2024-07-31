@@ -1,0 +1,76 @@
+﻿        * Authentication and Authorization:
+         
+        * Authentication: 
+            Definition: Authentication is the process of verifying the identity of a user or system. It answers the question, "Who are you?"
+            Purpose: To ensure that the entity attempting to access the system is who they claim to be.
+            Common Methods:
+                Password-based authentication: Involves verifying a user's identity using a combination of a username and password.
+                Multi-Factor Authentication (MFA): Combines two or more authentication methods, such as something the user knows (password), has (security token), or is (fingerprint).
+                Biometric authentication: Uses physical characteristics like fingerprints, facial recognition, or iris scans.
+                Token-based authentication: Users are authenticated via tokens (such as JWT) that are issued upon successful login and presented in subsequent requests.
+            Examples:
+                Login functionality: When a user provides their username and password, the application verifies these credentials against its records.
+
+        * Authorization:
+            Definition: Authorization is the process of determining what an authenticated user is allowed to do. It answers the question, "What are you allowed to do?"
+            Purpose: To ensure that authenticated users can only access resources and perform actions that they are permitted to.
+            Common Methods:
+                Role-based access control (RBAC): Permissions are assigned based on user roles (e.g., Admin, User, Guest).
+                Attribute-based access control (ABAC): Decisions are made based on attributes (e.g., user, resource, environment).
+                Access control lists (ACL): Define which users or groups have access to specific resources.
+            Examples:
+                Permission Checks: After a user is authenticated, the system checks their permissions to determine whether they can access a particular resource or perform a specific action.
+
+
+        * Practical Usage in Applications:
+            Combined Workflow: 
+                a. Authentication: 
+                    User logs in with credentials 
+                    → Server verifies identity 
+                    → Issues a JWT token. 
+                b. Authorization: 
+                    Token is included in each request 
+                    → Server checks permissions based on token claims 
+                    → Grants or denies access based on roles/permissions.
+        */
+
+        public class AuthenticationService
+        {
+            public bool AuthenticateUser(string username, string password)
+            {
+                // Logic to check if the username and password are correct
+                // For example, querying the database
+                return IsValidUser(username, password);
+            }
+
+            private bool IsValidUser(string username, string password)
+            {
+                // Placeholder for actual user validation logic
+                // Return true if valid, false otherwise
+                return username == "admin" && password == "securepassword";
+            }
+        }
+
+        public class AuthorizationService
+        {
+            public bool AuthorizeUser(string username, string action)
+            {
+                // Logic to determine if the user has permission to perform the action
+                var userRole = GetUserRole(username);
+                return HasPermission(userRole, action);
+            }
+
+            private string GetUserRole(string username)
+            {
+                // Placeholder for actual logic to retrieve user's role
+                // Example: return "Admin" for "admin" username
+                return username == "admin" ? "Admin" : "User";
+            }
+
+            private bool HasPermission(string role, string action)
+            {
+                // Placeholder for actual permission logic
+                // Example: Admin has all permissions, User has limited permissions
+                return role == "Admin" || (role == "User" && action != "AdminOnlyAction");
+            }
+        }

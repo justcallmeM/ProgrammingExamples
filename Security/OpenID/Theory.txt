@@ -1,0 +1,90 @@
+OpenID is an open standard and decentralized authentication protocol that allows users to be authenticated by relying on third-party services, called OpenID providers (OPs), eliminating the need for service providers (RPs) to manage and store login credentials. It enables a user to log into multiple, unrelated websites without having to create and manage multiple separate login credentials.
+Key Concepts of OpenID
+1. OpenID Provider (OP):
+An entity that authenticates the end-user and provides information about the user to third-party services.
+Examples: Google, Facebook, Twitter, etc., can act as OpenID providers.
+2. Relying Party (RP):
+The service (website or application) that requests authentication from an OpenID Provider to validate the user.
+Examples: Websites like StackOverflow, GitHub, etc., that use third-party authentication.
+3. OpenID Identifier:
+A unique identifier that represents the user in the OpenID system.
+It can be either a URL (e.g., https://example.com/johndoe) or an XRDS (Extensible Resource Descriptor Sequence) document.
+4. Discovery:
+The process by which a Relying Party determines the OpenID Provider for a given OpenID Identifier.
+This typically involves looking up metadata on the user's identifier URL.
+How OpenID Authentication Works
+The authentication flow typically involves the following steps:
+User Initiates Login:
+The user visits a Relying Party (RP) and selects to log in using an OpenID Provider.
+RP Redirects to OP:
+The RP redirects the user to their chosen OpenID Provider. This redirection includes a request for authentication.
+User Authenticates with OP:
+The user logs into their account at the OpenID Provider. If the user is already logged in, this step might be skipped.
+OP Redirects Back to RP:
+After authentication, the OP redirects the user back to the RP with an authentication response. This includes an assertion of the user’s identity.
+RP Validates Assertion:
+The RP verifies the authenticity of the assertion, often by checking the signature using the OP's public key.
+Access Granted or Denied:
+If the assertion is valid, the RP grants access to the user. Otherwise, access is denied.
+Example Use Case
+Consider a scenario where an OpenID provider (like Google) is used to log into a website (like StackOverflow).
+1. User Initiates Login:
+The user clicks on "Login with Google" on StackOverflow.
+2. RP Redirects to OP:
+StackOverflow (RP) redirects the user to Google's login page with a request for authentication.
+
+Copy http
+GET https://accounts.google.com/o/oauth2/auth?
+    response_type=code&
+    client_id=CLIENT_ID&
+    redirect_uri=REDIRECT_URI&
+    scope=openid%20email%20profile&
+    state=STATE
+3. User Authenticates with OP:
+The user enters their Google credentials and logs in.
+4. OP Redirects Back to RP:
+Google authenticates the user and redirects them back to StackOverflow with an authentication response.
+
+Copy http
+HTTP/1.1 302 Found
+Location: https://stackoverflow.com/oauth2callback?
+    code=AUTHORIZATION_CODE&
+    state=STATE
+5. RP Validates Assertion:
+StackOverflow servers validate the authorization code by calling Google’s token endpoint and verify the identity token.
+
+Copy http
+POST https://oauth2.googleapis.com/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=CLIENT_ID&
+client_secret=CLIENT_SECRET&
+code=AUTHORIZATION_CODE&
+grant_type=authorization_code&
+redirect_uri=REDIRECT_URI
+6. Access Granted or Denied:
+If the identity is validated, StackOverflow grants the user access to their account. Otherwise, access is denied.
+OpenID Connect (OIDC)
+OpenID Connect (OIDC) is an identity layer built on top of OAuth 2.0. While OpenID provides a way to authenticate users, OIDC adds more functionalities and uses OAuth 2.0 for the authentication process.
+Key Features of OpenID Connect:
+Standardized User Info Endpoint: Provides a standard way to retrieve user profile information.
+Tokens: Uses ID tokens (JWT) to convey user authentication information.
+Optional Functions: Allows the inclusion of additional authentication processes like multi-factor authentication.
+Interoperability: Ensures better interoperability between different implementations of OpenID Connect.
+Example Token Endpoint Response:
+
+Copy json
+{
+  "access_token": "ACCESS_TOKEN",
+  "id_token": "ID_TOKEN",
+  "expires_in": 3600,
+  "token_type": "Bearer",
+  "scope": "openid email profile"
+}
+ID Token: Contains user identity claims (subject, issuer, audience, etc.), typically in JWT format.
+Summary
+OpenID simplifies the user experience by allowing users to authenticate with a single set of credentials across multiple services. OpenID Connect enhances OpenID by providing a seamless and secure authentication process built on top of OAuth 2.0, ensuring interoperability and secure identity verification.
+By leveraging OpenID and OpenID Connect, you can streamline authentication processes, reduce the need for multiple passwords, and improve security across different platforms.
+
+
+https://openid.net/

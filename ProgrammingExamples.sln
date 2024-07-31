@@ -11,11 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRS", "CQRS", "{F42180FA-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Factory", "Factory", "{3B0A51E7-D9E4-42D5-A66E-54793D371C11}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Questions", "Questions", "{07C4323B-B33B-4C40-9BCF-3B4E8DA4392C}"
-	ProjectSection(SolutionItems) = preProject
-		Database.txt = Database.txt
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccessModifiers", "AccessModifiers", "{23CC7B3A-9937-4497-93C8-DB587C443BBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Delegates", "Delegates", "{FB3D642C-3B15-4349-BDF5-7ED714035881}"
@@ -128,7 +123,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Architecture", "Architectur
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchitecture", "CleanArchitecture", "{D115C647-0534-4C3B-BC0F-C3A7110AA16A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTests", "AcceptanceTests\AcceptanceTests.csproj", "{D7452416-1C88-4827-82F0-A2A2BA84FDA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcceptanceTests", "AcceptanceTests\AcceptanceTests.csproj", "{D7452416-1C88-4827-82F0-A2A2BA84FDA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{C9F2AEAD-DF5C-49DD-9DF4-5683155847C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{ECAFE1E3-A258-418B-AC33-787F539042AC}"
+	ProjectSection(SolutionItems) = preProject
+		Database.txt = Database.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security", "Security\Security.csproj", "{1040CC72-0B98-4B3B-A618-605FC140DE53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice", "Practice", "{EA023148-E50D-434F-A92E-461411CE981B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeApi", "PracticeApi\PracticeApi.csproj", "{2C479C67-A5AE-4963-AA20-0BF8F88CB7CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,6 +188,14 @@ Global
 		{D7452416-1C88-4827-82F0-A2A2BA84FDA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7452416-1C88-4827-82F0-A2A2BA84FDA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7452416-1C88-4827-82F0-A2A2BA84FDA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1040CC72-0B98-4B3B-A618-605FC140DE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1040CC72-0B98-4B3B-A618-605FC140DE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1040CC72-0B98-4B3B-A618-605FC140DE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1040CC72-0B98-4B3B-A618-605FC140DE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C479C67-A5AE-4963-AA20-0BF8F88CB7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C479C67-A5AE-4963-AA20-0BF8F88CB7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C479C67-A5AE-4963-AA20-0BF8F88CB7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C479C67-A5AE-4963-AA20-0BF8F88CB7CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -233,6 +249,9 @@ Global
 		{36FC7D3A-3F05-4BF6-B103-C8E182E868F4} = {D92098A0-1E95-45BA-B8A1-3D18CA29C526}
 		{D115C647-0534-4C3B-BC0F-C3A7110AA16A} = {BDE6E047-E378-4308-A9B2-8D991739F5D1}
 		{D7452416-1C88-4827-82F0-A2A2BA84FDA7} = {D92098A0-1E95-45BA-B8A1-3D18CA29C526}
+		{1040CC72-0B98-4B3B-A618-605FC140DE53} = {C9F2AEAD-DF5C-49DD-9DF4-5683155847C5}
+		{EA023148-E50D-434F-A92E-461411CE981B} = {C9F2AEAD-DF5C-49DD-9DF4-5683155847C5}
+		{2C479C67-A5AE-4963-AA20-0BF8F88CB7CC} = {EA023148-E50D-434F-A92E-461411CE981B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C120AA94-3CD6-4021-A0FC-56814CD3488D}
